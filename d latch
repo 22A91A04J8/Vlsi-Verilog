@@ -1,0 +1,22 @@
+// Code your design here
+module d_latch(d,en,reset,q,qbar);
+     input d,en,reset;
+     output reg q,qbar;
+
+     always @(d,en) begin
+          if(reset==1) begin
+             q=0;
+             qbar=1;
+         end 
+         else begin
+             if(en==0) begin
+                 q=0;
+                 qbar=qbar;
+             end
+             else begin
+                  q=d;
+                  qbar=!q;
+             end    
+         end
+     end
+endmodule   
