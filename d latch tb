@@ -1,0 +1,19 @@
+// Code your testbench here
+// or browse Examples
+module tb;
+      reg d,en,reset;
+      wire q,qbar;
+
+      initial begin
+         reset=1;#10;
+         reset=0;
+         en=0;
+         d=1;#10;
+         en=1;
+         d=1;
+         #10;
+         d=0;
+      end
+      initial $monitor("d=%b,en=%b,reset=%b,1=%b,qbar=%b",d,en,reset,q,qbar);
+      d_latch a1(d,en,reset,q,qbar);
+endmodule
