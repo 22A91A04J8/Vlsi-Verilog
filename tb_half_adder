@@ -1,0 +1,19 @@
+// Code your testbench here
+// or browse Examples
+module tb;
+  reg a,b;
+  wire s,c;
+  
+  initial begin
+    a=0; b=0;#1;
+    a=0; b=1;#1;
+    a=1; b=0;#1;
+    a=1; b=1;
+    
+  end
+  
+  initial $monitor("a=%b, b=%b, s=%b, c=%b",a,b,s,c);
+  
+  half_adder a1(a,b,s,c);
+  
+endmodule
