@@ -1,0 +1,22 @@
+// Code your testbench here
+// or browse Examples
+module tb;
+  reg [3:0]a,b;
+  reg cin;
+  wire [3:0]s;
+  wire cout;
+  wire [4:0]add;
+  
+  assign add={s,cout};
+  initial begin
+    a=0;b=0;cin=1;#3;
+    a=0;b=1;cin=1;#3;
+    a=1;b=0;cin=1;#3;
+    a=1;b=1;cin=1;
+  end
+    
+  initial $monitor("a=%b,b=%b,cin=%b,s=%b,Cout=%b,add=%d",a,b,cin,s,cout,add);
+    cla a1(a,b,cin,s,cout);
+
+endmodule
+                   
